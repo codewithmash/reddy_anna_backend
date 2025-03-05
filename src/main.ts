@@ -71,8 +71,7 @@ async function bootstrap() {
   app.useStaticAssets(join(root.path, "public"));
   app.useStaticAssets(join(root.path, "public", "v-public"));
   app.useStaticAssets(join(root.path, "public", "media"));
-   const HOST = "82.29.167.167";
-  await app.listen(port, HOST);
+  await app.listen(port,'0.0.0.0');
 
   console.log("app run on port " + port);
 
