@@ -2,7 +2,7 @@
  * Copyright 2023, the hatemragab project author.
  * All rights reserved. Use of this source code is governed by a
  * MIT license that can be found in the LICENSE file.
- */  
+ */
 
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
@@ -72,11 +72,10 @@ async function bootstrap() {
   app.useStaticAssets(join(root.path, "public", "v-public"));
   app.useStaticAssets(join(root.path, "public", "media"));
 
-
-  await app.listen(port);
+  await app.listen(port,'0.0.0.0');
 
   console.log("app run on port " + port);
-
-}
+} 
+ 
 
 bootstrap();
