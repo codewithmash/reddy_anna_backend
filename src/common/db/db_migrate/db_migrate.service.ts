@@ -26,9 +26,8 @@ export class DbMigrateService {
         let packageOfJson = JSON.parse(rawData);
         let newVersion = packageOfJson.version;
         let config = await this.appConfigService.getConfig()
-        if (newVersion.toString() != config.backendVersion.toString()) {
-            await this._migrateFromVersion1To2(newVersion);
-        }
+        await this._migrateFromVersion1To2(newVersion);
+        
     }
 
     private async _migrateFromVersion1To2(newVersion: string) {
